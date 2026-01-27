@@ -1,65 +1,210 @@
-import Image from "next/image";
+import Image from 'next/image';
+import DashboardCard from './components/common/DashboardCard';
+import { DASHBOARD_CARDS } from './constants';
 
 export default function Home() {
-  return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.js file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    return (
+        <div className="page-container">
+            <div className="flex items-center justify-between bg-[#111B3C] h-[96px]">
+                <h1 className="text-white text-[32px] font-semibold ml-6">
+                    Call Logs & History
+                </h1>
+                <div className="flex items-center space-x-10 mr-6">
+                    <Image
+                        src="/notifications.png"
+                        alt="Search"
+                        width={32}
+                        height={32}
+                        className=""
+                    />
+                    <Image
+                        src="/Avatar.png"
+                        alt="Search"
+                        width={80}
+                        height={80}
+                        className="rounded-full"
+                    />
+                </div>
+            </div>
+            <div className="p-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid-rows-6 sm:grid-rows-3 lg:grid-rows-2 gap-6">
+                    {DASHBOARD_CARDS.map((card) => (
+                        <DashboardCard
+                            key={card.name}
+                            name={card.name}
+                            value={card.value}
+                            percentage={card.percentage}
+                            status={card.status}
+                            image={card.image}
+                        />
+                    ))}
+                </div>
+                <div className="mt-6 bg-[#111B3C] rounded-2xl px-6 py-8 border border-[#2B7FFF33]">
+                    <div className="flex justify-between items-center mb-5">
+                        <div>
+                            <h1 className="text-xl mb-1">
+                                Call Trends - This Week
+                            </h1>
+                            <span className="text-sm text-gray-400 leading-5">
+                                Total: 472 calls
+                            </span>
+                        </div>
+                        <div className="flex bg-[#1D293D] items-center justify-center gap-x-4 py-2 px-4 rounded-xl border border-[#2B7FFF33]">
+                            <span>This Week</span>
+                            <Image
+                                src="/dropdown.png"
+                                alt="dropdown"
+                                width={16}
+                                height={16}
+                            />
+                        </div>
+                    </div>
+                    <div>
+                        <Image
+                            src="/graph.png"
+                            alt="Chart"
+                            width={400}
+                            height={200}
+                            className="w-full h-auto"
+                        />
+                    </div>
+                </div>
+                <div className="grid grid-cols-1 lg:grid-cols-2 grid-rows-2 lg:grid-rows-1 gap-6 mt-6">
+                    <div className="bg-[#111B3C] rounded-2xl px-6 py-8 border border-[#2B7FFF33]">
+                        <h1 className="text-xl mb-4">Recently Activity</h1>
+                        <div className="flex flex-col gap-3">
+                            <div className="flex items-start gap-x-2.5 bg-[#1D293D80] rounded-xl p-4">
+                                <Image
+                                    src="/green-dot.png"
+                                    alt="dot"
+                                    width={8}
+                                    height={8}
+                                    className="pt-1"
+                                />
+                                <div className="flex flex-col">
+                                    <p className="text-sm mb-1.5">
+                                        AI booked appointment for iPhone 13
+                                        screen repair
+                                    </p>
+                                    <span className="text-xs text-gray-400">
+                                        2 min ago
+                                    </span>
+                                </div>
+                            </div>
+                            <div className="flex items-start gap-x-2.5 bg-[#1D293D80] rounded-xl p-4">
+                                <Image
+                                    src="/yellow-dot.png"
+                                    alt="dot"
+                                    width={8}
+                                    height={8}
+                                    className="pt-1"
+                                />
+                                <div className="flex flex-col">
+                                    <p className="text-sm mb-1.5">
+                                        Warm transfer to technician - Software
+                                        issue
+                                    </p>
+                                    <span className="text-xs text-gray-400">
+                                        5 min ago
+                                    </span>
+                                </div>
+                            </div>
+                            <div className="flex items-start gap-x-2.5 bg-[#1D293D80] rounded-xl p-4">
+                                <Image
+                                    src="/green-dot.png"
+                                    alt="dot"
+                                    width={8}
+                                    height={8}
+                                    className="pt-1"
+                                />
+                                <div className="flex flex-col">
+                                    <p className="text-sm mb-1.5">
+                                        Quote provided for iPad battery
+                                        replacement
+                                    </p>
+                                    <span className="text-xs text-gray-400">
+                                        8 min ago
+                                    </span>
+                                </div>
+                            </div>
+                            <div className="flex items-start gap-x-2.5 bg-[#1D293D80] rounded-xl p-4">
+                                <Image
+                                    src="/red-dot.png"
+                                    alt="dot"
+                                    width={8}
+                                    height={8}
+                                    className="pt-1"
+                                />
+                                <div className="flex flex-col">
+                                    <p className="text-sm mb-1.5">
+                                        Call dropped after 12 seconds
+                                    </p>
+                                    <span className="text-xs text-gray-400">
+                                        15 min ago
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className=" bg-[#111B3C] rounded-2xl px-6 py-8 border border-[#2B7FFF33]">
+                        <h1 className="text-xl mb-4">Top Repair Requests</h1>
+                        <div className="flex flex-col gap-y-3">
+                            <div className="flex flex-col gap-y-2">
+                                <div className="flex justify-between">
+                                    <span className="text-sm">
+                                        Screen Repair
+                                    </span>
+                                    <span className="text-sm text-gray-300">
+                                        156 request
+                                    </span>
+                                </div>
+                                <div className="relative h-2 rounded-full bg-[#1D293D]">
+                                    <span className="absolute h-2 rounded-full bg-gradient-to-r from-blue-500 to-sky-400 w-3/5"></span>
+                                </div>
+                            </div>
+                            <div className="flex flex-col gap-y-2">
+                                <div className="flex justify-between">
+                                    <span className="text-sm">
+                                        Battery Replacement
+                                    </span>
+                                    <span className="text-sm text-gray-300">
+                                        89 request
+                                    </span>
+                                </div>
+                                <div className="relative h-2 rounded-full bg-[#1D293D]">
+                                    <span className="absolute h-2 rounded-full bg-gradient-to-r from-blue-500 to-sky-400 w-[35%]"></span>
+                                </div>
+                            </div>
+                            <div className="flex flex-col gap-y-2">
+                                <div className="flex justify-between">
+                                    <span className="text-sm">
+                                        Back Glass Repair
+                                    </span>
+                                    <span className="text-sm text-gray-300">
+                                        67 request
+                                    </span>
+                                </div>
+                                <div className="relative h-2 rounded-full bg-[#1D293D]">
+                                    <span className="absolute h-2 rounded-full bg-gradient-to-r from-blue-500 to-sky-400 w-1/4"></span>
+                                </div>
+                            </div>
+                            <div className="flex flex-col gap-y-2">
+                                <div className="flex justify-between">
+                                    <span className="text-sm">
+                                        Software Issues
+                                    </span>
+                                    <span className="text-sm text-gray-300">
+                                        45 request
+                                    </span>
+                                </div>
+                                <div className="relative h-2 rounded-full bg-[#1D293D]">
+                                    <span className="absolute h-2 rounded-full bg-gradient-to-r from-blue-500 to-sky-400 w-1/5"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+    );
 }
