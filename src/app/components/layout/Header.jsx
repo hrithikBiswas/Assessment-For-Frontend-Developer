@@ -8,7 +8,7 @@ const Header = () => {
     const pathname = usePathname();
     const activeLink = {
         li: 'shadow-[0px_10px_20px_5px_rgba(51,_99,_154,_0.7)]',
-        link: 'bg-[url(/backdrop.png)] shadow-[inset_0px_0px_12px_1px_rgba(255,_255,_255,_1)]',
+        link: 'bg-[url(/backdrop.png)] shadow-[inset_0px_0px_12px_1px_rgba(210,_234,_255,_1)]',
     };
 
     return (
@@ -24,7 +24,7 @@ const Header = () => {
                     >
                         <Link
                             href={link.href}
-                            className={`flex font-base items-center px-3 py-2 rounded-2xl hover:bg-[url(/backdrop.png)] bg-no-repeat bg-center bg-cover hover:shadow-[inset_0px_0px_12px_1px_rgba(255,_255,_255,_1)] transition-all duration-100 ${link.href === pathname && activeLink.link}`}
+                            className={`flex font-base items-center px-3 py-2 rounded-2xl hover:bg-[url(/backdrop.png)] bg-no-repeat bg-center bg-cover hover:shadow-[inset_0px_0px_12px_1px_rgba(210,_234,_255,_1)] transition-all duration-100 ${link.href === pathname && activeLink.link}`}
                         >
                             <Image
                                 src={link.image}
@@ -38,6 +38,13 @@ const Header = () => {
                     </li>
                 ))}
             </ul>
+
+            <div className="absolute bottom-15 left-4 flex gap-x-4 cursor-pointer">
+                <Image src="/logout.png" alt="logout" width={32} height={32} />
+                <button className="text-base text-[#FF1100] cursor-pointer">
+                    Logout
+                </button>
+            </div>
         </div>
     );
 };

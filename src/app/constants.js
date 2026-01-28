@@ -119,3 +119,98 @@ export const CALL_LISTS = [
         category: 'Screen',
     },
 ];
+
+export const APPOINTMENT_CARDS = [
+    {
+        name: 'Total Booked',
+        icon: '/calender-color.png',
+        number: 34,
+        result: '+8 this week',
+        status: 'success',
+    },
+    {
+        name: 'AI Booked',
+        icon: '/right.png',
+        number: 28,
+        result: '82% of total',
+        status: '',
+    },
+    {
+        name: 'Pending',
+        icon: '/pending.png',
+        number: 3,
+        result: 'Awaiting confirmation',
+        status: '',
+    },
+];
+
+export const APPOINTMENT_TABLE_DATA = [
+    {
+        clientName: 'Jane D',
+        clientPhone: '01960685765',
+        clientMail: 'admin@gmail.com',
+        device: 'Apple/Iphone 13pro',
+        repairType: 'Screen',
+        date: '02/06/2026',
+        slotNo: 1,
+        startTime: '09:00',
+    },
+    {
+        clientName: 'Jane D',
+        clientPhone: '01960685765',
+        clientMail: 'admin@gmail.com',
+        device: 'Apple/Iphone 13pro',
+        repairType: 'Screen',
+        date: '02/06/2026',
+        slotNo: 1,
+        startTime: '09:00',
+    },
+    {
+        clientName: 'Jane D',
+        clientPhone: '01960685765',
+        clientMail: 'admin@gmail.com',
+        device: 'Apple/Iphone 13pro',
+        repairType: 'Screen',
+        date: '02/06/2026',
+        slotNo: 1,
+        startTime: '09:00',
+    },
+    {
+        clientName: 'Jane D',
+        clientPhone: '01960685765',
+        clientMail: 'admin@gmail.com',
+        device: 'Apple/Iphone 13pro',
+        repairType: 'Screen',
+        date: '02/06/2026',
+        slotNo: 1,
+        startTime: '09:00',
+    },
+    {
+        clientName: 'Jane D',
+        clientPhone: '01960685765',
+        clientMail: 'admin@gmail.com',
+        device: 'Apple/Iphone 13pro',
+        repairType: 'Screen',
+        date: '02/06/2026',
+        slotNo: 1,
+        startTime: '09:00',
+    },
+    {
+        clientName: 'Jane D',
+        clientPhone: '01960685765',
+        clientMail: 'admin@gmail.com',
+        device: 'Apple/Iphone 13pro',
+        repairType: 'Screen',
+        date: '02/06/2026',
+        slotNo: 1,
+        startTime: '09:00',
+    },
+];
+
+export const USER_DATA = {
+    image: '/Avatar.png',
+    fullName: 'Jane D.',
+    email: 'jane@gmail.com',
+    storeName: 'Ubreakfix Store',
+    storeAddress: '123 Main Street, New York, NY 10001',
+};

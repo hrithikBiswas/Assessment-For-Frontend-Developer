@@ -4,8 +4,8 @@ import React from 'react';
 const CallDetails = () => {
     return (
         <div className="bg-[#111B3C] rounded-2xl border border-[#2B7FFF33]">
-            <h1 className="text-xl p-6">Call Details</h1>
-            <div className="p-6 border-t border-t-[#2B7FFF33]">
+            <h1 className="text-xl p-4 sm:p-6">Call Details</h1>
+            <div className="p-4 sm:p-6 border-t border-t-[#2B7FFF33]">
                 <div className="grid grid-cols-2 grid-rows-1  mb-6">
                     <div className="flex flex-col gap-y-4">
                         <div className="flex flex-col gap-y-1">
@@ -22,13 +22,13 @@ const CallDetails = () => {
                         </div>
                     </div>
                     <div className="flex flex-col gap-y-4">
-                        <div className="flex flex-col gap-y-1">
+                        <div className="flex flex-col items-end sm:items-start gap-y-1">
                             <span className="text-sm text-gray-400 leading-5">
                                 Duration
                             </span>
                             <h2 className="text-base">4:32</h2>
                         </div>
-                        <div className="flex flex-col gap-y-1">
+                        <div className="flex flex-col items-end sm:items-start gap-y-1">
                             <span className="text-sm text-gray-400 leading-5">
                                 Issue Type
                             </span>

@@ -27,7 +27,7 @@ const CallListItem = ({ call }) => {
     }`;
 
     return (
-        <div className="flex flex-col gap-y-4 px-6 py-4 border-t border-t-[#2B7FFF33]">
+        <div className="flex flex-col gap-y-4 px-4 sm:px-6 py-4 border-t border-t-[#2B7FFF33]">
             <div className="flex justify-between items-start">
                 <div className="flex items-start gap-x-3">
                     <Image src={image} alt="Call Icon" width={40} height={40} />
@@ -43,7 +43,7 @@ const CallListItem = ({ call }) => {
                     </div>
                 </div>
                 <div
-                    className={`border ${statusStyles} rounded-[10px] py-1.5 px-3.5 text-xs`}
+                    className={`border ${statusStyles} rounded-md sm:rounded-[10px] py-0.5 sm:py-1.5 px-1 sm:px-3.5 text-xs`}
                 >
                     {statusText}
                 </div>

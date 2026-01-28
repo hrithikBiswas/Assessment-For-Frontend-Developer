@@ -9,8 +9,8 @@ export default function Home() {
     return (
         <div className="page-container">
             <PageHeader title="Dashboard Overview" />
-            <div className="p-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid-rows-6 sm:grid-rows-3 lg:grid-rows-2 gap-6">
+            <div className="p-4 sm:p-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid-rows-6 sm:grid-rows-3 lg:grid-rows-2 gap-4 sm:gap-6">
                     {DASHBOARD_CARDS.map((card) => (
                         <DashboardCard
                             key={card.name}
@@ -22,7 +22,7 @@ export default function Home() {
                         />
                     ))}
                 </div>
-                <div className="mt-6 bg-[#111B3C] rounded-2xl px-6 py-8 border border-[#2B7FFF33]">
+                <div className="mt-4 sm:mt-6 bg-[#111B3C] rounded-2xl px-4 sm:px-6 py-6 sm:py-8 border border-[#2B7FFF33]">
                     <div className="flex justify-between items-center mb-5">
                         <div>
                             <h1 className="text-xl mb-1">
@@ -32,7 +32,7 @@ export default function Home() {
                                 Total: 472 calls
                             </span>
                         </div>
-                        <div className="flex bg-[#1D293D] items-center justify-center gap-x-4 py-2 px-4 rounded-xl border border-[#2B7FFF33]">
+                        <div className="flex bg-[#1D293D] items-center justify-center gap-x-2 sm:gap-x-4 py-2 px-4 rounded-xl border border-[#2B7FFF33]">
                             <span>This Week</span>
                             <Image
                                 src="/dropdown.png"
@@ -52,7 +52,7 @@ export default function Home() {
                         />
                     </div>
                 </div>
-                <div className="grid grid-cols-1 lg:grid-cols-2 grid-rows-2 lg:grid-rows-1 gap-6 mt-6">
+                <div className="grid grid-cols-1 lg:grid-cols-2 grid-rows-2 lg:grid-rows-1 gap-4 sm:gap-6 mt-4 sm:mt-6">
                     <RecentActivity />
                     <TopRepairRequests />
                 </div>

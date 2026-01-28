@@ -2,7 +2,7 @@ import React from 'react';
 
 const TopRepairRequests = () => {
     return (
-        <div className=" bg-[#111B3C] rounded-2xl px-6 py-8 border border-[#2B7FFF33]">
+        <div className=" bg-[#111B3C] rounded-2xl px-4 sm:px-6 py-6 sm:py-8 border border-[#2B7FFF33]">
             <h1 className="text-xl mb-4">Top Repair Requests</h1>
             <div className="flex flex-col gap-y-3">
                 <div className="flex flex-col gap-y-2">
