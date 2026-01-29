@@ -1,4 +1,4 @@
-# Assessment Frontend Dev
+# This is a small Assessment project for next step of hiring process
 
 A responsive frontend UI implementation based on Figma design specifications. Built with modern technologies to deliver a clean, user-friendly interface with seamless responsiveness across all devices.
 
