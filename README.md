@@ -76,21 +76,21 @@ yarn dev
 
 ## 📦 Available Scripts
 
-# For npm
+#### For npm
 
 - `npm run dev` - Start the development server
 - `npm run build` - Build the application for production
 - `npm start` - Start the production server
 - `npm run lint` - Run ESLint to check code quality
 
-# For pnpm
+#### For pnpm
 
 - `pnpm dev` - Start the development server
 - `pnpm build` - Build the application for production
 - `pnpm start` - Start the production server
 - `pnpm lint` - Run ESLint to check code quality
 
-# For yarn
+#### For yarn
 
 - `yarn dev` - Start the development server
 - `yarn build` - Build the application for production
