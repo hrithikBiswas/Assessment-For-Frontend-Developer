@@ -42,7 +42,7 @@ const EditUser = () => {
                         alt="Preview"
                         width={102}
                         height={102}
-                        className="object-cover rounded-full"
+                        className="w-[102px] h-[102px] object-cover rounded-full"
                     />
                     <Image
                         src="/edit.png"
