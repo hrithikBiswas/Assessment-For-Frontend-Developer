@@ -24,12 +24,12 @@ const AppointmentsPage = () => {
                 </div>
                 <div className="rounded-2xl p-4 sm:p-6 bg-gradient-to-tr from-[#16213E] to-[#1A1A2E] mb-6 sm:mb-8">
                     <h2 className="mb-3">Booking Link</h2>
-                    <div className="flex items-center gap-x-3 sm:gap-x-4">
+                    <div className="flex items-center gap-x-2 sm:gap-x-4">
                         <input
                             type="search"
                             name="search"
                             defaultValue="https://techstore.com/book?id=store123"
-                            className="rounded-[14px] py-3 px-4 outline-none flex-1 bg-[#0A0A0F80] border border-[#00FF8833]"
+                            className="rounded-[14px] py-3 px-2.5 sm:px-4 outline-none flex-1 bg-[#0A0A0F80] border border-[#00FF8833]"
                         />
                         <button className="flex gap-x-2 items-center py-2 px-3 rounded-xl bg-[url(/backdrop.png)] bg-no-repeat bg-center bg-cover shadow-[inset_0px_0px_12px_1px_rgba(210,_234,_255,_1)] cursor-pointer">
                             <Image
