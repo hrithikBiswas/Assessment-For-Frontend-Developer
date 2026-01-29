@@ -1,5 +1,3 @@
-import React from 'react';
-
 const TopRepairRequests = () => {
     return (
         <div className=" bg-[#111B3C] rounded-2xl px-4 sm:px-6 py-6 sm:py-8 border border-[#2B7FFF33]">

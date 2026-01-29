@@ -206,11 +206,3 @@ export const APPOINTMENT_TABLE_DATA = [
         startTime: '09:00',
     },
 ];
-
-export const USER_DATA = {
-    image: '/Avatar.png',
-    fullName: 'Jane D.',
-    email: 'jane@gmail.com',
-    storeName: 'Ubreakfix Store',
-    storeAddress: '123 Main Street, New York, NY 10001',
-};

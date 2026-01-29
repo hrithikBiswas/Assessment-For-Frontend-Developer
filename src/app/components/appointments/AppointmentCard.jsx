@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import React from 'react';
 import SmGrayText from '@/components/common/SmGrayText';
 
 const AppointmentCard = ({ name, icon, number, result, status }) => {

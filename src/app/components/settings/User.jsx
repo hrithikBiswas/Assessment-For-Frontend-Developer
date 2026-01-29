@@ -1,7 +1,9 @@
+'use client';
+import useCallService from '@/hooks/useCallService';
 import Image from 'next/image';
-import React from 'react';
 
-const User = ({ user, setIsEdit }) => {
+const User = () => {
+    const { user, setIsEdit } = useCallService();
     return (
         <>
             <div className="mb-8">
@@ -10,7 +12,7 @@ const User = ({ user, setIsEdit }) => {
                     <Image
                         src={user.image}
                         alt="profile photo"
-                        className="w-[102px] h-[102px]"
+                        className="w-[102px] h-[102px] rounded-full"
                         width={102}
                         height={102}
                     />
@@ -24,6 +26,7 @@ const User = ({ user, setIsEdit }) => {
                     </button>
                 </div>
             </div>
+
             <table className="max-w-150 ">
                 <tbody>
                     <tr>

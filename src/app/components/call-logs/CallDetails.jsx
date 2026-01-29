@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import React from 'react';
 
 const CallDetails = () => {
     return (
@@ -50,7 +49,7 @@ const CallDetails = () => {
                     <h5 className="text-sm text-gray-400 leading-5">Outcome</h5>
                     <h2 className="text-base">Quote provided</h2>
                 </div>
-                <button className="w-full p-4 mb-6 flex justify-center items-center gap-x-2 rounded-[14px] border border-[#AD46FF4D] bg-gradient-to-r from-[#AD46FF33] to-[#F6339A33] ">
+                <button className="w-full cursor-pointer p-4 mb-6 flex justify-center items-center gap-x-2 rounded-[14px] border border-[#AD46FF4D] bg-gradient-to-r from-[#AD46FF33] to-[#F6339A33] ">
                     <Image
                         src="/play.png"
                         alt="play Button"

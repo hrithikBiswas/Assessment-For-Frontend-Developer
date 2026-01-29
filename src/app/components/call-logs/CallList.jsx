@@ -1,4 +1,3 @@
-import React from 'react';
 import CallListItem from '@/components/call-logs/CallListItem';
 import { CALL_LISTS } from '@/constants';
 

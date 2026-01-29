@@ -2,14 +2,10 @@
 import PageHeader from '@/components/layout/PageHeader';
 import EditUser from '@/components/settings/EditUser';
 import User from '@/components/settings/User';
-import { USER_DATA } from '@/constants';
-import { useState } from 'react';
+import useCallService from '@/hooks/useCallService';
 
 const SettingsPage = () => {
-    const [user, setUser] = useState(USER_DATA);
-    const [isEdit, setIsEdit] = useState(false);
-
-    console.log(user);
+    const { isEdit } = useCallService();
 
     return (
         <div className="page-container">
@@ -21,15 +17,7 @@ const SettingsPage = () => {
                         Password Setting
                     </button>
                 </div>
-                {isEdit ? (
-                    <EditUser
-                        user={user}
-                        setUser={setUser}
-                        setIsEdit={setIsEdit}
-                    />
-                ) : (
-                    <User user={user} setIsEdit={setIsEdit} />
-                )}
+                {isEdit ? <EditUser /> : <User />}
             </div>
         </div>
     );

@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import React from 'react';
 
 const DashboardCard = ({ name, value, percentage, status, image }) => {
     return (

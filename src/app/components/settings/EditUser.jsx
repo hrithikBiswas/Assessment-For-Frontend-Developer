@@ -1,17 +1,41 @@
 'use client';
+import { useEffect, useRef, useState } from 'react';
+import useCallService from '@/hooks/useCallService';
 import Image from 'next/image';
-import React from 'react';
 
-const EditUser = ({ user, setUser, setIsEdit }) => {
+const EditUser = () => {
+    const imageFileRef = useRef(null);
+    const { user, setUser, setIsEdit } = useCallService();
+    const [draftUser, setDraftUser] = useState(user);
+
+    useEffect(() => {
+        setDraftUser(user);
+    }, [user]);
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('update data:', user);
+
+        setUser(draftUser);
         setIsEdit(false);
     };
     const handleChange = (e) => {
+        const { name, value } = e.target;
+
         setUser((prev) => ({
             ...prev,
-            [e.target.name]: e.target.value,
+            [name]: value,
+        }));
+    };
+
+    const handleImageChange = (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+
+        const ImageUrl = URL.createObjectURL(file);
+
+        setDraftUser((prev) => ({
+            ...prev,
+            image: ImageUrl,
         }));
     };
 
@@ -19,13 +43,16 @@ const EditUser = ({ user, setUser, setIsEdit }) => {
         <div>
             <div className="mb-8">
                 <h3 className="text-xl mb-2">Profile Image</h3>
-                <div className="relative w-[102px] h-[102px]">
+                <label
+                    htmlFor="image"
+                    className="relative flex flex-col items-center justify-center w-[102px] h-[102px] rounded-full cursor-pointer"
+                >
                     <Image
-                        src="/Avatar.png"
-                        alt="profile photo"
-                        className="w-[102px] h-[102px]"
+                        src={draftUser.image}
+                        alt="Preview"
                         width={102}
                         height={102}
+                        className="object-cover rounded-full"
                     />
                     <Image
                         src="/edit.png"
@@ -34,7 +61,16 @@ const EditUser = ({ user, setUser, setIsEdit }) => {
                         width={40}
                         height={40}
                     />
-                </div>
+                    <input
+                        ref={imageFileRef}
+                        id="image"
+                        name="image"
+                        type="file"
+                        accept="image/*"
+                        onChange={handleImageChange}
+                        className="hidden"
+                    />
+                </label>
             </div>
             <form onSubmit={handleSubmit} className="max-w-6xl ">
                 <div className="grid grid-cols-1 sm:grid-cols-2 grid-rows-4 sm:grid-rows-2 gap-x-12 gap-y-4 sm:gap-y-6">
@@ -46,7 +82,7 @@ const EditUser = ({ user, setUser, setIsEdit }) => {
                             type="text"
                             name="fullName"
                             id="fullName"
-                            value={user.fullName}
+                            value={draftUser.fullName}
                             onChange={handleChange}
                             placeholder="John Doe"
                             className="rounded-[14px] py-3 px-5 outline-none placeholder-gray-500 bg-[#0A0A0F80] border border-[#00FF8833]"
@@ -60,7 +96,7 @@ const EditUser = ({ user, setUser, setIsEdit }) => {
                             type="text"
                             name="email"
                             id="email"
-                            value={user.email}
+                            value={draftUser.email}
                             onChange={handleChange}
                             placeholder="john@gmail.com"
                             className="rounded-[14px] py-3 px-5 outline-none placeholder-gray-500 bg-[#0A0A0F80] border border-[#00FF8833]"
@@ -74,7 +110,7 @@ const EditUser = ({ user, setUser, setIsEdit }) => {
                             type="text"
                             name="storeName"
                             id="storeName"
-                            value={user.storeName}
+                            value={draftUser.storeName}
                             onChange={handleChange}
                             placeholder="Betopia Group"
                             className="rounded-[14px] py-3 px-5 outline-none placeholder-gray-500 bg-[#0A0A0F80] border border-[#00FF8833]"
@@ -89,7 +125,7 @@ const EditUser = ({ user, setUser, setIsEdit }) => {
                             name="storeAddress"
                             id="storeAddress"
                             onChange={handleChange}
-                            value={user.storeAddress}
+                            value={draftUser.storeAddress}
                             placeholder="Kaderia Tower, Mohakhali, Dhaka"
                             className="rounded-[14px] py-3 px-5 outline-none placeholder-gray-500 bg-[#0A0A0F80] border border-[#00FF8833]"
                         />

@@ -14,7 +14,9 @@ const Header = () => {
     return (
         <div className="hidden md:block fixed top-0 left-0 bottom-0 w-[241px] bg-[#111B3C] border-r border-r-[#2B7FFF33]">
             <div className="flex items-center justify-center py-10">
-                <Image src="/logo.png" alt="Logo" width={56} height={56} />
+                <Link href="/">
+                    <Image src="/logo.png" alt="Logo" width={56} height={56} />
+                </Link>
             </div>
             <ul className="px-2">
                 {NAV_LINKS.map((link) => (
@@ -39,7 +41,7 @@ const Header = () => {
                 ))}
             </ul>
 
-            <div className="absolute bottom-15 left-4 flex gap-x-4 cursor-pointer">
+            <div className="absolute bottom-10 left-4 flex gap-x-4 cursor-pointer">
                 <Image src="/logout.png" alt="logout" width={32} height={32} />
                 <button className="text-base text-[#FF1100] cursor-pointer">
                     Logout

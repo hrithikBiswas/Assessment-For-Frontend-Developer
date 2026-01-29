@@ -4,7 +4,6 @@ import AppointmentTable from '@/components/appointments/AppointmentTable';
 import PageHeader from '@/components/layout/PageHeader';
 import { APPOINTMENT_CARDS } from '@/constants';
 import Image from 'next/image';
-import React from 'react';
 
 const AppointmentsPage = () => {
     return (

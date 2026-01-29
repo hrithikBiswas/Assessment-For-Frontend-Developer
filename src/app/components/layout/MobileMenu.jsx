@@ -48,7 +48,6 @@ const MobileMenu = () => {
                 }}
                 onOpenChange={onOpenChange}
                 classNames={{
-                    // wrapper: 'bg-red-500',
                     base: 'bg-[#111B3C] border-l border-l-[#2B7FFF33]',
                 }}
             >
@@ -56,13 +55,15 @@ const MobileMenu = () => {
                     {(onClose) => (
                         <>
                             <DrawerHeader className="flex justify-between items-center border-b border-b-[#2B7FFF33]">
-                                <Image
-                                    src="/logo.png"
-                                    alt="Logo"
-                                    width={44}
-                                    height={44}
-                                    className=""
-                                />
+                                <Link href="/">
+                                    <Image
+                                        src="/logo.png"
+                                        alt="Logo"
+                                        width={44}
+                                        height={44}
+                                        className=""
+                                    />
+                                </Link>
                                 <div className="flex items-center gap-x-2">
                                     <Image
                                         src="/notifications.png"
@@ -112,16 +113,16 @@ const MobileMenu = () => {
                                     variant="light"
                                     onPress={onClose}
                                 >
-                                    <div className="flex gap-x-2 cursor-pointer">
+                                    <div className="flex items-center gap-x-3 cursor-pointer">
                                         <Image
                                             src="/logout.png"
                                             alt="logout"
                                             width={28}
                                             height={28}
                                         />
-                                        <button className="text-base text-[#FF1100] cursor-pointer">
+                                        <span className="text-base text-[#FF1100] cursor-pointer">
                                             Logout
-                                        </button>
+                                        </span>
                                     </div>
                                 </Button>
                             </DrawerFooter>

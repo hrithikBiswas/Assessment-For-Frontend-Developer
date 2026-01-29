@@ -1,6 +1,4 @@
 import Image from 'next/image';
-import DashboardCard from '@/components/dashboard/DashboardCard';
-import { DASHBOARD_CARDS } from '@/constants';
 import PageHeader from '@/components/layout/PageHeader';
 import CallList from '@/components/call-logs/CallList';
 import CallDetails from '@/components/call-logs/CallDetails';
@@ -32,7 +30,7 @@ const CallLogPage = () => {
                     </div>
                     <div className="">
                         <div className="flex justify-end flex-wrap gap-2 sm:gap-6 mb-4 sm:mb-6">
-                            <div className="flex items-center justify-center gap-x-1 sm:gap-x-4 py-2 sm:py-3 px-2 sm:px-8 bg-[#111B3C] rounded-xl border border-[#2B7FFF33]">
+                            <div className="flex items-center justify-center gap-x-1 cursor-pointer sm:gap-x-4 py-2 sm:py-3 px-2 sm:px-8 bg-[#111B3C] rounded-xl border border-[#2B7FFF33]">
                                 <span>All Types</span>
                                 <Image
                                     src="/dropdown.png"
@@ -41,7 +39,7 @@ const CallLogPage = () => {
                                     height={16}
                                 />
                             </div>
-                            <div className="flex items-center justify-center gap-x-1 sm:gap-x-4 py-2 sm:py-3 px-2 sm:px-8 bg-[#111B3C] rounded-xl border border-[#2B7FFF33]">
+                            <div className="flex items-center justify-center gap-x-1 cursor-pointer sm:gap-x-4 py-2 sm:py-3 px-2 sm:px-8 bg-[#111B3C] rounded-xl border border-[#2B7FFF33]">
                                 <span>All Issues</span>
                                 <Image
                                     src="/dropdown.png"
@@ -50,7 +48,7 @@ const CallLogPage = () => {
                                     height={16}
                                 />
                             </div>
-                            <div className="flex items-center justify-center gap-x-1 sm:gap-x-4 py-2 sm:py-3 px-2 sm:px-8 bg-[#111B3C] rounded-xl border border-[#2B7FFF33]">
+                            <div className="flex items-center justify-center gap-x-1 cursor-pointer sm:gap-x-4 py-2 sm:py-3 px-2 sm:px-8 bg-[#111B3C] rounded-xl border border-[#2B7FFF33]">
                                 <span>Today</span>
                                 <Image
                                     src="/dropdown.png"
