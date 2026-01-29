@@ -1,46 +1,36 @@
 'use client';
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import useCallService from '@/hooks/useCallService';
 import Image from 'next/image';
+import { useFormik } from 'formik';
 
 const EditUser = () => {
     const imageFileRef = useRef(null);
     const { user, setUser, setIsEdit } = useCallService();
-    const [draftUser, setDraftUser] = useState(user);
+    const [imagePreview, setImagePreview] = useState(null);
 
-    useEffect(() => {
-        setDraftUser(user);
-    }, [user]);
+    const formik = useFormik({
+        initialValues: user,
+        onSubmit: (values) => {
+            console.log(values);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+            setUser(values);
 
-        setUser(draftUser);
-        setIsEdit(false);
-    };
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-
-        setUser((prev) => ({
-            ...prev,
-            [name]: value,
-        }));
-    };
+            setIsEdit(false);
+        },
+    });
 
     const handleImageChange = (e) => {
         const file = e.target.files[0];
         if (!file) return;
 
         const ImageUrl = URL.createObjectURL(file);
-
-        setDraftUser((prev) => ({
-            ...prev,
-            image: ImageUrl,
-        }));
+        formik.setFieldValue('image', ImageUrl);
+        setImagePreview(ImageUrl);
     };
 
     return (
-        <div>
+        <form onSubmit={formik.handleSubmit}>
             <div className="mb-8">
                 <h3 className="text-xl mb-2">Profile Image</h3>
                 <label
@@ -48,7 +38,7 @@ const EditUser = () => {
                     className="relative flex flex-col items-center justify-center w-[102px] h-[102px] rounded-full cursor-pointer"
                 >
                     <Image
-                        src={draftUser.image}
+                        src={imagePreview || user.image}
                         alt="Preview"
                         width={102}
                         height={102}
@@ -72,7 +62,7 @@ const EditUser = () => {
                     />
                 </label>
             </div>
-            <form onSubmit={handleSubmit} className="max-w-6xl ">
+            <div className="max-w-6xl ">
                 <div className="grid grid-cols-1 sm:grid-cols-2 grid-rows-4 sm:grid-rows-2 gap-x-12 gap-y-4 sm:gap-y-6">
                     <div className="flex flex-col gap-y-1 sm:gap-y-2">
                         <label className="text-xl" htmlFor="fullName">
@@ -82,8 +72,8 @@ const EditUser = () => {
                             type="text"
                             name="fullName"
                             id="fullName"
-                            value={draftUser.fullName}
-                            onChange={handleChange}
+                            value={formik.values.fullName}
+                            onChange={formik.handleChange}
                             placeholder="John Doe"
                             className="rounded-[14px] py-3 px-5 outline-none placeholder-gray-500 bg-[#0A0A0F80] border border-[#00FF8833]"
                         />
@@ -96,8 +86,8 @@ const EditUser = () => {
                             type="text"
                             name="email"
                             id="email"
-                            value={draftUser.email}
-                            onChange={handleChange}
+                            value={formik.values.email}
+                            onChange={formik.handleChange}
                             placeholder="john@gmail.com"
                             className="rounded-[14px] py-3 px-5 outline-none placeholder-gray-500 bg-[#0A0A0F80] border border-[#00FF8833]"
                         />
@@ -110,8 +100,8 @@ const EditUser = () => {
                             type="text"
                             name="storeName"
                             id="storeName"
-                            value={draftUser.storeName}
-                            onChange={handleChange}
+                            value={formik.values.storeName}
+                            onChange={formik.handleChange}
                             placeholder="Betopia Group"
                             className="rounded-[14px] py-3 px-5 outline-none placeholder-gray-500 bg-[#0A0A0F80] border border-[#00FF8833]"
                         />
@@ -124,8 +114,8 @@ const EditUser = () => {
                             type="text"
                             name="storeAddress"
                             id="storeAddress"
-                            onChange={handleChange}
-                            value={draftUser.storeAddress}
+                            value={formik.values.storeAddress}
+                            onChange={formik.handleChange}
                             placeholder="Kaderia Tower, Mohakhali, Dhaka"
                             className="rounded-[14px] py-3 px-5 outline-none placeholder-gray-500 bg-[#0A0A0F80] border border-[#00FF8833]"
                         />
@@ -139,8 +129,8 @@ const EditUser = () => {
                         Save
                     </button>
                 </div>
-            </form>
-        </div>
+            </div>
+        </form>
     );
 };
 

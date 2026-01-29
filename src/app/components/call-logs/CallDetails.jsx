@@ -65,6 +65,7 @@ const CallDetails = () => {
                             alt="script Button"
                             width={20}
                             height={20}
+                            className="w-5 h-5"
                         />
                         <h2 className="text-base">Conversation Transcript</h2>
                     </div>

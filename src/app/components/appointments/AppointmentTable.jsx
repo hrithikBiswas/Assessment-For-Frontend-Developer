@@ -21,6 +21,7 @@ export default function AppointmentTable() {
                 tr: 'border-t border-t-[#162F61]',
                 td: 'py-3 sm:py-5 px-6 sm:px-10',
             }}
+            aria-label="appointment table"
         >
             <TableHeader>
                 <TableColumn>Client Name</TableColumn>
